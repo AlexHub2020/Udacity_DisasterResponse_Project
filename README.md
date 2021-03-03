@@ -23,17 +23,17 @@ The data used can be found on the Figure Eight / Appen webseite within the Open 
 **Link:** https://appen.com/datasets/combined-disaster-response-data/
 
 **Project Files within this repository:**
-- folder "app": The main parts for the Flask app were provided by the Udacity to complete the project. 
-  - folder "templates": 
-    - file "go.html": HTML page to show the result of the typed message and displays the values for the 36 disaster categories. 
-    - file "master.html": Main HTML page to show the input field to type in the message as well as the visualizations / plots showing details / insights of the training data.  
-  - file "run.py": Main file to start the flask app. Contains the data processing and the layout of the plots.  
-- folder "data": Within the folder "data" not only the raw data is stored but also the python file to clean and prepare the data for the machine learning process.
-  - file "disaster_categories.csv": Contains the values for the 36 disaster categories the messages are classified.
-  - file "disaster_messages.csv": Contains the messages in English and its original language as well as the assigned genre of the message. 
-  - file "process_data.py": Contains the ETL-Pipeline to load the data, clean it, prepare it for further processing and store it in a SQLite database. 
-- folder "models": 
-  - file "train_classifier.py": Contains the Machine Learning Processing / Pipeline - loading the SQLite database, creating a ML model by using pipeline and GridSearch, training and testing the model and storing the model as a pickle file. 
+- **folder "app":**<br>The main parts for the Flask app were provided by the Udacity to complete the project. 
+  - **folder "templates":** 
+    - **file "go.html":** HTML page to show the result of the typed message and displays the values for the 36 disaster categories. 
+    - **file "master.html":** Main HTML page to show the input field to type in the message as well as the visualizations / plots showing details / insights of the training data.  
+  - **file "run.py":** Main file to start the flask app. Contains the data processing and the layout of the plots.  
+- **folder "data":**<br> Within the folder "data" not only the raw data is stored but also the python file to clean and prepare the data for the machine learning process.
+  - **file "disaster_categories.csv":** Contains the values for the 36 disaster categories the messages are classified.
+  - **file "disaster_messages.csv":** Contains the messages in English and its original language as well as the assigned genre of the message. 
+  - **file "process_data.py":** Contains the ETL-Pipeline to load the data, clean it, prepare it for further processing and store it in a SQLite database. 
+- **folder "models":** 
+  - **file "train_classifier.py":** Contains the Machine Learning Processing / Pipeline - loading the SQLite database, creating a ML model by using pipeline and GridSearch, training and testing the model and storing the model as a pickle file. 
 
 **4. How To Interact With My Project** <br>
 The app can be used to classify any messages with regard to 36 categories on disaster events. Furthermore the app visualize the training data on disaster messages with two specific plots. 
