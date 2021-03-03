@@ -1,7 +1,7 @@
 # Udacity_DisasterResponse_Project
 Udacity Project - ETL, NLP - Predicting Categories of Messages
 
-1. Installation
+**1. Installation**<br>
 Necessary packages to run the web app and the python files:
 Python
 Pandas
@@ -12,17 +12,17 @@ Plotly
 SQLite3
 SQLalchemy
 SKLEARN
-Pickle
+Pickle<br>
 
-2. Project Motivation
-The open soure dataset of Figure Eight "Multilingual Disaster Response Messages" contains real live messages sent during disaster events. These messages and the classification to a disaster category is used to create a machine learning model. Based on that model any message can be classified to a certain disaster category by using a web flask app and identify what kind of disaster is happening and what kind of help might be needed. 
+**2. Project Motivation** <br>
+The open soure dataset of Figure Eight "Multilingual Disaster Response Messages" contains real live messages sent during disaster events. These messages and the classification to a disaster category is used to create a machine learning model. Based on that model any message can be classified to a certain disaster category by using a web flask app and identify what kind of disaster is happening and what kind of help might be needed. <br>
 
-3. File Descriptions
-Data source:
-The data used can be found on the Figure Eight / Appen webseite within the Open Source Datasets. The following dataset was chosen "Multilingual Disaster Response Messages". 
-Link: https://appen.com/datasets/combined-disaster-response-data/
+**3. File Descriptions**<br>
+**Data source:** <br>
+The data used can be found on the Figure Eight / Appen webseite within the Open Source Datasets. The following dataset was chosen "Multilingual Disaster Response Messages". <br>
+**Link:** https://appen.com/datasets/combined-disaster-response-data/
 
-Project Files within this repository:
+**Project Files within this repository:**
 - folder "app": The main parts for the Flask app were provided by the Udacity to complete the project. 
   - folder "templates": 
     - file "go.html": HTML page to show the result of the typed message and displays the values for the 36 disaster categories. 
@@ -35,38 +35,37 @@ Project Files within this repository:
 - folder "models": 
   - file "train_classifier.py": Contains the Machine Learning Processing / Pipeline - loading the SQLite database, creating a ML model by using pipeline and GridSearch, training and testing the model and storing the model as a pickle file. 
 
-4. How To Interact With My Project
+**4. How To Interact With My Project** <br>
 The app can be used to classify any messages with regard to 36 categories on disaster events. Furthermore the app visualize the training data on disaster messages with two specific plots. 
 
-5.Licensing, Authors, Acknowledgements
-The basic structure of the flask app (esp. folder templates) was provided by Udacity to create the app and to complete the project.
+**5.Licensing, Authors, Acknowledgements** <br>
+The basic structure of the flask app (esp. folder templates) was provided by Udacity to create the app and to complete the project.<br>
 Data do disaster response messages were provided by Figure Eight: https://appen.com/datasets/combined-disaster-response-data/
 
-
-6. References, Sources, Links
-The following sources are used to create and develop this app and python files: 
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
-https://docs.python.org/3/library/re.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.rstrip.html?highlight=strip
-https://towardsdatascience.com/how-to-show-all-columns-rows-of-a-pandas-dataframe-c49d4507fcf 
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html?highlight=apply#pandas.DataFrame.apply
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html?highlight=merge#pandas.DataFrame.merge
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html?highlight=drop#pandas.DataFrame.drop
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html
-https://www.w3schools.com/python/python_ref_string.asp
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html#pandas.concat
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html?highlight=duplicate
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html
-https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html
-https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html?highlight=train%20test%20split#sklearn.model_selection.train_test_split
-https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html
-https://knowledge.udacity.com/questions/422261
-https://knowledge.udacity.com/questions/102104
-https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.AdaBoostClassifier.html?highlight=adaboost#sklearn.ensemble.AdaBoostClassifier
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
-https://plotly.com/python/bar-charts/#facetted-subplots
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html
+**6. References, Sources, Links** <br>
+The following sources are used to create and develop this app and python files: <br>
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
+- https://docs.python.org/3/library/re.html
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.rstrip.html?highlight=strip
+- https://towardsdatascience.com/how-to-show-all-columns-rows-of-a-pandas-dataframe-c49d4507fcf 
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html?highlight=apply#pandas.DataFrame.apply
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html?highlight=merge#pandas.DataFrame.merge
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html?highlight=drop#pandas.DataFrame.drop
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html
+- https://www.w3schools.com/python/python_ref_string.asp
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html#pandas.concat
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop_duplicates.html
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.duplicated.html?highlight=duplicate
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_sql_table.html
+- https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html
+- https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html?highlight=train%20test%20split#sklearn.model_selection.train_test_split
+- https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html
+- https://knowledge.udacity.com/questions/422261
+- https://knowledge.udacity.com/questions/102104
+- https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.AdaBoostClassifier.html?highlight=adaboost#sklearn.ensemble.AdaBoostClassifier
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
+- https://plotly.com/python/bar-charts/#facetted-subplots
+- https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.index.html
