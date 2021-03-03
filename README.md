@@ -36,7 +36,7 @@ The data used can be found on the Figure Eight / Appen webseite within the Open 
   - **file "train_classifier.py":** Contains the Machine Learning Processing / Pipeline - loading the SQLite database, creating a ML model by using pipeline and GridSearch, training and testing the model and storing the model as a pickle file. 
 
 **4. How To Interact With My Project** <br>
-The app can be used to classify any messages with regard to 36 categories on disaster events. Furthermore the app visualize the training data on disaster messages with two specific plots. 
+The app can be used to classify any messages with regard to 36 categories on disaster events. Furthermore the app visualizes the training data on disaster messages with two specific plots. 
 
 **5.Licensing, Authors, Acknowledgements** <br>
 The basic structure of the flask app (esp. folder templates) was provided by Udacity to create the app and to complete the project.<br>
