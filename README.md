@@ -37,9 +37,9 @@ The data used can be found on the Figure Eight / Appen webseite within the Open 
 
 **4. How To Interact With My Project** <br>
 The app can be used to classify any messages with regard to 36 categories on disaster events. Furthermore the app visualizes the training data on disaster messages with two specific plots. 
-The files has to been run in the following order:
-**1. process_data.py:** <br> to let the app work correctly please use the following filepath and name for the database "data/DisasterResponse.db" as this filename is used in the app
-**2. train_classifier.py:** <br> to let the app work correctly please use the following filepath and name for the database "models/classifier.pkl"
+The files has to been run in the following order:<br>
+**1. process_data.py:** <br> to let the app work correctly please use the following filepath and name for the database "data/DisasterResponse.db" as this filename is used in the app<br>
+**2. train_classifier.py:** <br> to let the app work correctly please use the following filepath and name for the database "models/classifier.pkl"<br>
 **3. run.py:** <br> run the web app in the app's directory
 
 **5.Licensing, Authors, Acknowledgements** <br>
