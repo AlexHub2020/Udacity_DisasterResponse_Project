@@ -8,6 +8,16 @@ from sqlalchemy import create_engine
 
 #load datasets for messages and categories
 def load_data(messages_filepath, categories_filepath):
+    """
+    Loads and merges data of the messages and categories.
+
+    Parameters:
+    messages_filepath (string): filepath for the messages data
+    categories_filepath (string): filepath for the categories data
+
+    Returns:
+    df (dataframe): returns the merged dataframe of messages and categories
+    """
     messages = pd.read_csv(messages_filepath)
     categories = pd.read_csv(categories_filepath)
     #merge messages and categories based on id
@@ -16,6 +26,15 @@ def load_data(messages_filepath, categories_filepath):
 
 #clean data
 def clean_data(df):
+    """
+    Cleans and processes the data and removing duplicates.
+
+    Parameters:
+    df (dataframe): Dataframe which has to be cleaned
+
+    Returns:
+    df (dataframe): returns the cleaned dataframe
+    """
     #split dataset with categories columns only
     categories = df['categories'].str.split(pat = ';', expand=True)
     #extract the column names
@@ -36,12 +55,25 @@ def clean_data(df):
     #drop duplicates
     df.drop_duplicates(inplace = True)
     #"related" has 3 unique values - clean the data to not falsify the classification
-    df.replace({'related': 2}, 1, inplace = True)
-
+    #check whether in column related exists value 2 and replace it with 1
+    if (df[df['related'] == 2].count()['related']) > 0:
+        df.replace({'related': 2}, 1, inplace = True)
+    else:
+        pass
     return df
 
 
 def save_data(df, database_filename):
+    """
+    Saves dataset to a SQLite database using the provided filepath
+
+    Parameters:
+    df (dataframe): Dataframe which has to be saved
+    database_filename (string): filepath including the filename
+
+    Returns:
+    no values returned
+    """
     #open sqlite engine and load the sqlite-database
     engine = create_engine('sqlite:///{}'.format(database_filename))
     df.to_sql('disaster_data', engine, index=False)
