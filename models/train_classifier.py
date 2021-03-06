@@ -20,6 +20,19 @@ nltk.download('stopwords')
 
 #load data out of the database
 def load_data(database_filepath):
+    """
+    Loads a SQLite database by providing the respective filepath and returns the
+    data for X and Y aswell as for the names for the categories.
+
+    Parameters:
+    database_filepath (string): filepath to the SQLite database.
+
+    Returns:
+    X (dataframe): X-values of the database
+    Y (dataframe): Y-values of the database
+    category_names (array): names of the catagories
+    """
+
     #create database engine
     engine = create_engine('sqlite:///{}'.format(database_filepath))
     #read in file
@@ -27,13 +40,27 @@ def load_data(database_filepath):
     #define features and label arrays
     X = df.iloc[:,1]
     Y = df.iloc[:,4:]
-    Y.replace({'related': 2}, 1, inplace = True)
+    #check whether in column related exists value 2 and replace it with 1
+    if (Y[Y['related'] == 2].count()['related']) > 0:
+        Y.replace({'related': 2}, 1, inplace = True)
+    else:
+        pass
     #get category names
     category_names = Y.columns
     return X, Y, category_names
 
 
 def tokenize(text):
+    """
+    Tokenizes a text by lowering all letters, removing special characters and
+    english stopwords.
+
+    Parameters:
+    text (string): text which has to be tokenized
+
+    Returns:
+    words (array): returns an array of words
+    """
     #normalize all words to lowercase
     text = text.lower()
     #remove special characters - keep alpha / numeric letters
@@ -46,6 +73,16 @@ def tokenize(text):
 
 
 def build_model():
+    """
+    Builds a NLP-Pipeline, a machine learning model using GridSearch to classify
+    text in multiple categories.
+
+    Parameters:
+    no input parameters
+
+    Returns:
+    final_model: Machine learning model (AdaBoostClassifier)
+    """
     # text processing and model pipeline
     pipeline = Pipeline([('vect', CountVectorizer(tokenizer=tokenize)),
                      ('tfidf', TfidfTransformer()),
@@ -59,12 +96,35 @@ def build_model():
     return final_model
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    Predicts values by using the provided model and prints out a classification
+    report with several key scores.
+
+    Parameters:
+    model (machine learning model): model to use to predict the values
+    X_test (dataframe): X-values to use for the prediction
+    Y_test (dataframe): Y-values to calculate the model scores
+    category_names (array): category names
+
+    Returns:
+    no return of values
+    """
     #predict data using the trained model
     pred_data = model.predict(X_test)
     #print report on prediction scores
     print(classification_report(Y_test, pred_data, target_names = category_names))
 
 def save_model(model, model_filepath):
+    """
+    Saves the model as a pickle file to a provided filepath.
+
+    Parameters:
+    model (machine learning model): model to be saved
+    model_filepath (string): filepath where the model should be saved
+
+    Returns:
+    no return of values
+    """
     #save the trained model
     pickle.dump(model,open(model_filepath,'wb'))
 
