@@ -1,4 +1,4 @@
-#import necessary libraries 
+#import necessary libraries
 import json
 import plotly
 import pandas as pd
@@ -15,6 +15,15 @@ app = Flask(__name__)
 
 #provided function to transform text input of app user
 def tokenize(text):
+    """
+    Tokenizes a text.
+
+    Parameters:
+    text (string): text which has to be tokenized
+
+    Returns:
+    clean_tokens(array): returns an array of words
+    """
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
@@ -37,7 +46,6 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/')
 @app.route('/index')
 def index():
-
     #Data for 1st visual
     #Get the Top Ten Categories of the categorized messages
 
