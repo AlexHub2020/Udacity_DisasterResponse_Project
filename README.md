@@ -14,7 +14,7 @@ SQLalchemy
 SKLEARN
 Pickle<br>
 
-**2. Project Motivation** <br>
+**2. Project Motivation / Summary** <br>
 The open soure dataset of Figure Eight "Multilingual Disaster Response Messages" contains real live messages sent during disaster events. These messages and the classification to a disaster category is used to create a machine learning model. Based on that model any message can be classified to a certain disaster category by using a web flask app and identify what kind of disaster is happening and what kind of help might be needed. <br>
 
 **3. File Descriptions**<br>
